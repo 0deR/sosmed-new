@@ -15,6 +15,13 @@ pipeline {
                 }
             }
         }
+        stage('Push Image') {
+            steps{
+                script {
+                    sh "docker push asefamarudin/sosmed-apps:${BUILD_NUMBER}"
+                }
+            }
+        }
      }
    
 }
