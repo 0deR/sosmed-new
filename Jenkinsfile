@@ -22,6 +22,13 @@ pipeline {
                 }
             }
         }
+        stage('deploy') {
+            steps{
+                script {
+                    sh "kubectl  set image deployment/sosmed-cilsy  sosmed-cilsy=asefamarudin/sosmed-apps:${BUILD_NUMBER}"
+                }
+            }
+        }
      }
    
 }
